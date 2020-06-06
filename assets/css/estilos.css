@@ -354,7 +354,7 @@ justify-content: center;
      #hero, .bkgr01, .bkgr02, .bkgr03, .bkgr04 {
           height: 100vh;
      }
-     #hero .logo {width: 70px;}
+     #hero .logo {width: 70px; height: auto;}
      #hero nav {padding:7px 0;max-height: 70px;}
      #hero nav ul {display: none;}
      h1 {
