@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15" height="28" viewBox="0 0 15 28">
+  <defs>
+    <filter id="icono-facebook-a">
+      <feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/>
+    </filter>
+    <polygon id="icono-facebook-b" points="0 0 14.971 0 14.971 27.953 0 27.953"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" filter="url(#icono-facebook-a)">
+    <mask id="icono-facebook-c" fill="#fff">
+      <use xlink:href="#icono-facebook-b"/>
+    </mask>
+    <path fill="#0037B2" d="M13.9901188,15.7235294 L14.7664482,10.6647176 L9.91237765,10.6647176 L9.91237765,7.38187059 C9.91237765,5.99784706 10.5904482,4.6488 12.7644247,4.6488 L14.9711894,4.6488 L14.9711894,0.341788235 C14.9711894,0.341788235 12.9686365,0 11.0539659,0 C7.05648353,0 4.44351882,2.42294118 4.44351882,6.80915294 L4.44351882,10.6647176 L-1.05882353e-05,10.6647176 L-1.05882353e-05,15.7235294 L4.44351882,15.7235294 L4.44351882,27.9529412 L9.91237765,27.9529412 L9.91237765,15.7235294 L13.9901188,15.7235294 Z" mask="url(#icono-facebook-c)"/>
+  </g>
+</svg>

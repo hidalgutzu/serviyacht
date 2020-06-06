@@ -1,0 +1,322 @@
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+body, p, h2.blanco {font-family: 'Raleway', sans-serif;}
+p, h2 {color: #383838;}
+h1, h2 {font-family: 'Josefin Sans', sans-serif;text-transform: uppercase;}
+body {
+     color: black;
+     background: #F1F1F1;
+     font-size: 16px;
+     height: 100%;
+}
+:root {
+     --azulcielo: #5DF2DA;
+     --azulyacht: #014684;
+     --verdeyacht: #6BD4C3;
+     --dedalo: #D2C29D;
+     --gris: #7C7C7C;
+     --gris_claro: #c3c3c3;
+     --negro50: rgba(0,0,0,0.5);
+     --negro60: rgba(0,0,0,0.6);
+     --negro70: rgba(0,0,0,0.7);
+     --blanco50: rgba(255,255,255,0.5);
+     --blanco60: rgba(255,255,255,0.6);
+     --blanco70: rgba(255,255,255,0.7);
+     --blanco80: rgba(255,255,255,0.8);
+     --blanco90: rgba(255,255,255,0.9);
+     --trans: all 0.2s ease-in-out;
+}
+::selection {
+     background: var(--dedalo);
+     color: black;
+}
+::-moz-selection {
+     background: var(--dedalo);
+     color: black;
+}
+
+h1 {
+     color: white;
+     font-weight: 400;
+     font-size: 3em;
+     line-height: 1.2em;
+     
+}
+     h1 span {font-size: 0.7em;}
+
+h2 {
+     font-weight: 100;
+     font-size: 3.5em;
+     margin-bottom: 5%;
+}
+     h2::first-letter {color: var(--verdeyacht);font-weight: 600;font-size: 120%;}
+h2.blanco {color: var(--blanco90);}
+
+p {
+     line-height: 1.7em;
+}
+
+ul {
+     margin: 0;
+padding: 0;
+list-style: none;
+}
+
+button, input, select, textarea {
+     -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
+     margin: 0;
+}
+button {border: 0; background-color: 0;}
+
+nav {
+     width: 100%;
+     background-color: var(--blanco90);
+     display: flex;
+     justify-content: space-between;
+     padding: 20px 0;
+     position: fixed; 
+     z-index: 999;
+}
+nav ul {
+     display: flex;
+     margin-right: 20px;
+     height: inherit;
+}
+nav ul li {
+     display: flex;
+     cursor: pointer;
+     list-style: none;
+     transition: 0.3s ease all;
+}
+nav ul li a {
+     display: flex;
+     align-items: center;
+     padding: 10px 15px;
+     height: inherit;
+     text-transform: uppercase;
+     font-size: 0.7em;
+     font-weight: 600;
+     letter-spacing: 0.7px;
+     color: black;
+     text-decoration: none;
+     border-bottom: 4px solid rgba(255,255,255,0);
+     transition: 0.3s ease all;
+}
+nav ul li a:hover, .selected {
+     height: inherit;
+     border-bottom: 4px solid var(--azulcielo);
+     color: var(--azulcielo) !important;
+}
+
+footer {
+     background-color: var(--verdeyacht);
+     padding: 30px 0;
+}
+footer small {
+     color: white;
+     font-size: 0.65em;
+     letter-spacing: 0.7px;
+}
+
+/* +++++++++++++ CLASES +++++++++++++++++++++++++++++++++++++++ */
+.ocultar {display: none;}
+.borde {border: 1px solid red;}
+.divisor {
+     background: url('../images/divisor@2x.png') no-repeat center center;
+     background-size: 85%;
+     width: 100%;
+     height: 60px;
+     margin-top: 4%;
+}
+.img-border-bottom {border-bottom: 4px solid var(--verdeyacht);}
+.img-concepto {
+     left: 5%;
+     position: relative;
+}
+.img-concepto img {
+     position: relative;
+     z-index: 100;
+     max-width: 350px;
+}
+.img-cuadro-verde {
+     background: var(--verdeyacht);
+     width: 50%; 
+     height: 95%; 
+     position: absolute; 
+     bottom: -13px;
+     left: -15px;
+     z-index: 99;
+}
+
+.pleca-blanca {
+     width: 100%;
+     height: 43px;
+     background: url('../images/pleca-blanca.svg') bottom center;
+     background-size: cover;
+     position: absolute;
+     bottom: 0;
+}
+
+/* BOTONES */
+.btn-primario {
+     color: white;
+     letter-spacing: 0.8px;
+     font-weight: 400;
+     text-transform: uppercase;
+     font-size: 0.75em;
+     padding: 15px 25px;
+     border-radius: 25px;
+     background: var(--azulcielo);
+     box-shadow: 0 11px 18px 0 rgba(107,206,190,0.67);
+     cursor: pointer;
+     transition: 0.3s ease all;
+}
+.btn-primario:hover {
+     background-color: var(--azulyacht);
+     box-shadow: 0 6px 9px 0 rgba(47, 45, 71, 0.5);
+}
+
+/* HOME ------------------------------- */
+#hero {
+     height: 90vh;
+     text-align: center;
+     display: grid;
+     align-content: center;
+     position: relative;
+}
+.bkgr01 {background: url('../images/hero-foto1@2x.jpg') no-repeat center center;}
+.bkgr02 {background: url('../images/hero-foto2@2x.jpg') no-repeat center center;}
+.bkgr03 {background: url('../images/hero-foto3@2x.jpg') no-repeat center center;}
+.bkgr04 {background: url('../images/hero-foto4@2x.jpg') no-repeat center center;}
+
+.bkgr01, .bkgr02, .bkgr03, .bkgr04 {
+     width: 100vw;
+     height: 90vh;
+     background-size: cover;
+}
+.mislider {
+     top: 0;
+     width: 100vw;
+     height: inherit;
+     position: absolute !important;
+}
+.slick-slider {width:100% !important;}
+.slick-dots {position: absolute !important; bottom: 55px !important}
+.slick-dots li {margin: 0 !important;}
+.slick-dots li button:before {color:white !important; opacity:.45 !important; position:relative !important;}
+.slick-dots li.slick-active button:before {opacity: 1 !important;}
+
+#hero .call-to-action {margin-top: 3%;}
+#hero small {
+     display: flex;
+     justify-content: center;
+     color: var(--blanco70);
+     letter-spacing: 0.5px;
+     margin-top: 2%;
+}
+#hero button {
+     margin-top: 2%;
+}
+.logo {
+     width: 90px;
+     margin-left: 30px;
+}
+
+/* HOME > CONCEPTO ------------------------ */
+#concepto {
+     display: grid;
+     grid-template-columns: auto 60%;
+     padding: 0 8% 0 5%;
+     height: 100vh;
+     display: grid;
+     align-content: center;
+}
+#concepto .parrafo {
+     text-align: center;
+     padding-left: 10%;
+     display: grid;
+     align-content: center;
+}
+
+/* HOME > DESTACADOS ------------------------ */
+#destacados {
+     height: 180vh;
+     background: linear-gradient(0deg, #6BD4C3 15%, rgba(9,144,135,0.00) 70%), url('../images/foto-home-verde@2x.jpg') no-repeat top center;
+     background-attachment: fixed;
+     background-size: cover;
+     text-align: center;
+     display: grid;
+     justify-content: center;
+     align-content: space-between;
+     padding: 14% 0;
+     
+}
+
+#destacados .doce_anos {
+     position: relative;
+     /* border: 1px solid green; */
+     display: inherit;
+     margin: 0 auto;
+}
+     .doce_anos button {width: 50%;margin: 0 auto;margin-top:12%;}
+
+#destacados h2.blanco {
+     width: inherit;
+     text-transform: inherit;
+     letter-spacing: 2px;
+     font-weight: 300;
+     line-height: 1em;
+}
+     h2.blanco::first-letter {color: inherit;font-size: inherit;font-weight: inherit;}
+     h2.blanco::before, h2.blanco::after {
+          content: url('../images/guirnalda.svg');
+          position: absolute;
+          bottom:0;
+          top:0;
+     }
+     h2.blanco::before {left:-70px;}
+     h2.blanco::after {right:-70px;-webkit-transform: scaleX(-1);transform: scaleX(-1);}
+
+#destacados .beneficios {
+display: flex;
+justify-content: center;
+}
+     .beneficios .container {
+          width: 80%;
+          display: grid;
+          justify-content: space-around;
+          grid-auto-flow: column;
+     }
+     .beneficios p {
+          color: white;
+          font-weight: 300;
+          margin-top: 10px;
+     }
+     .beneficios img {
+          width: 60px;
+          height: 65px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid white;
+     }
+     .beneficios .item {
+          max-width: 85%;
+          /* border: 1px solid white; */
+     }
+
+ /* HOME > DESTACADOS ------------------------ */
+ footer {
+      text-align: center;
+      display: grid;
+      justify-content: center;
+      padding-bottom: 35px 0;
+ }
+ footer .iconos {margin-bottom: 20px;}
+ footer .iconos .logo-blanco {width: 80px;}
+ footer .iconos img {margin: 0 15px;}
+

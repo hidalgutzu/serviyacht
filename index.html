@@ -9,35 +9,103 @@
     <meta name="author" content="hidalgutzu@gmail.com" />
     <meta name="copyright" content="Serviyacht®" />
     <meta name="robots" content="index,follow" />
-    <link rel="stylesheet" href="./assets/estilos.css">
+    <link rel="stylesheet" href="./assets/css/estilos.css">
+    <link rel="stylesheet" href="./assets/css/animation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"/>
 </head>
 <body>
-    <header id="hero">
+    <header id="hero" class="home-intro">
+        <div class="mislider">
+                <img class="bkgr01" src="">
+                <img class="bkgr02" src="">
+                <img class="bkgr03" src="">
+                <img class="bkgr04" src="">
+        </div>
         <nav>
-            <img src="#" alt="Serviyacht" class="logo">
+            <img class="logo fadeInDownDelay-0" src="./assets/images/logo-serviyacht@2x.png" alt="Serviyacht">
             <ul>
-                <li><a href="">botón 1</a></li>
-                <li><a href="">botón 1</a></li>
-                <li><a href="">botón 1</a></li>
+                <li><a class="selected fadeInDownDelay-0" href="#">Inicio</a></li>
+                <li><a class="fadeInDownDelay-1" href="#">Nosotros</a></li>
+                <li><a class="fadeInDownDelay-2" href="#">Servicios</a></li>
+                <li><a class="fadeInDownDelay-3" href="#">Contacto</a></li>
             </ul>
         </nav>
         <div class="call-to-action">
-            <h1>Administración de<br/><span>Mantenimiento Marítimo</span></h1>
-            <button>Ver Servicios</button>
+            <h1 class="fadeInDown"><span>Administración de</span><br/>Mantenimiento Marítimo</h1>
+            <small class="fadeIn">Cancún Q. Roo, México</small><br>
+            <button class="btn-primario fadeInUpDelay">Ver Servicios</button>
         </div>
-        <small>Cancún Q. Roo, México</small>
+        <div class="pleca-blanca"></div>
     </header>
     <section id="concepto">
-        <div>
-            <img src="#" alt="Concepto - Serviyacht">
+        <div class="imagen">
+            <figure class="img-concepto">
+                <div class="img-cuadro-verde"></div>
+                <img class="img-border-bottom slide-in from-left" src="./assets/images/foto-home-concepto.jpg" alt="Concepto - Serviyacht">
+            </figure>
             <div class="cuadro-verde-izq"></div>
         </div>
-        <article>
+        <article class="parrafo  fade-in delay">
             <h2>Concepto</h2>
-            <p> Llevar el mantenimiento preventivo, correctivo y predictivo de todos los equipos del barco a cambio de un pago mensual.
-            Tener con el cliente un contrato anual para la administración de los mantenimientos de la embarcación.
-            Mantener en óptimas condiciones todos los equipos de la embarcación con programas de trabajo, bitacoras, memorias fotograficas, reportes mensuales al capitan y al propietario.</p>
+            <p><strong>Llevar el mantenimiento preventivo, correctivo y predictivo</strong> de todos los equipos del barco a cambio de un pago mensual.<br><br>
+            Tener con el cliente un contrato anual para la administración de los mantenimientos de la embarcación.<br><br>
+            <strong>Mantener en óptimas condiciones todos los equipos de la embarcación</strong> con programas de trabajo, bitacoras, memorias fotograficas, reportes mensuales al capitan y al propietario.</p>
+            <span class="divisor"></span>
         </article>
     </section>
+    <section id="destacados">
+        <div class="doce_anos fade-in">
+            <h2 class="blanco">12 Años de<br>Experiencia</h2>
+            <button class="btn-primario fadeInUp">Conócenos</button>
+        </div>
+        <div class="beneficios">
+            <div class="container">
+                <div class="item fade-in">
+                    <img src="./assets/images/icono-monedas.svg" alt="Pagos mensuales Serviyacht">
+                    <p>Pago mensual fijo que le ahorra dinero al no tener que pagar varios proveedores.</p>
+                </div>
+                <div class="item fade-in delay">
+                    <img src="./assets/images/icono-registro.svg" alt="Registro Serviyacht">
+                    <p>Formatos de entrega/recepción de los trabajos con firma de los capitanes de satisfacción.</p>
+                </div>
+                <div class="item fade-in delay2">
+                    <img src="./assets/images/icono-estrella.svg" alt="Excelencia Serviyacht">
+                    <p>Embarcaciones en muy buenas condiciones cada vez que se lleve a cabo una salida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="iconos">
+            <img src="./assets/images/icono-facebook.svg" alt="Facebook">
+            <img class="logo-blanco" src="./assets/images/serviyacht-logo-blanco.png" alt="Serviyacht">
+            <img src="./assets/images/icono-email.svg" alt="Correo">
+        </div>
+        <small>®Serviyacht Derechos Reservados <time dateyear="2020">2020</time> · Cancún Q. Roo México</small>
+    </footer>
+    <!-- Hero slider inicio -->
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.mislider').slick({
+                dots: true,
+                infinite: true,
+                fade: true,
+                cssEase: 'linear',
+                autoplaySpeed: 3000,
+                autoplay: true,
+                pauseOnHover: false,
+                arrows: false,
+                lazyLoad: 'ondemand',
+            });
+        });
+    </script>
+    <!-- Hero slider final -->
+    <script src="./assets/js/observers.js"></script>
 </body>
 </html>
+
