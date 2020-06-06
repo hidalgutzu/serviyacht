@@ -356,7 +356,21 @@ justify-content: center;
      }
      #hero .logo {width: 70px; height: 40px;}
      #hero nav {padding:7px 0;max-height: 70px;}
-     #hero nav ul {display: none;}
+     #hero nav ul {
+          display: grid;
+          grid-row: column;
+          height: 60vh;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20%;
+     }
+     #hero nav ul li {
+          padding: 0;
+     }
+     #hero nav ul li a{
+          width: 100%;
+          justify-content: center;
+     }
      h1 {
           font-size: 2em;          
      }
@@ -393,6 +407,60 @@ justify-content: center;
      #destacados .beneficios .container div {margin: 25px 0;}
      #destacados h2.blanco {font-size: 1.5em;}
      #destacados .doce_anos button {width: 100% !important;}
+
+     .hideoverflow {
+          overflow: hidden;
+      }
+     .burger-button, .burger-menu {
+          position: absolute;
+          position: fixed;
+          top: 0;
+          right: 0;
+      }
+      .burger-button {
+          position: fixed;
+          background: url("../images/lnr-menu.svg") no-repeat center center;
+          transform: scale(1.5);
+          width: 30px;
+          margin-right: 10px;
+          margin-top: 5px;
+          padding: 30px 17px 9px;
+          transition: var(--transicion);
+          z-index: 991;
+      }
+      .burger-button:hover {
+          background: url("../images/lnr-menu-hover.svg") no-repeat center center;
+      }
+      .burger-menu {
+          background: rgba(255,255,255,0.95);
+          z-index: 998;
+          height: 100vh;
+          right: -100vw;
+          width: 100vw;
+          transition: all 0.4s ease-in-out;
+      }
+      .burger-menu.is-active {
+          right: 0;
+      }
+      a.boton-cerrar {
+          position: absolute;
+          background: url("../images/close.svg") no-repeat center center;
+          background-size: cover;
+          width: 50px;
+          height: 50px;
+          right: 10px;
+          cursor: pointer;
+          margin: 7px 7px 0;
+          z-index: 9999;
+          transition: var(--transicion);
+      }
+      a.boton-cerrar:hover {
+          background: url("../images/close-hover.svg") no-repeat center center;
+          background-size: 3em; 
+      }
+      .boton-cerrar img {
+          width: 50px;
+      }
  }
 
 // Small devices (landscape phones, less than 768px)
