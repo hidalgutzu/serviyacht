@@ -249,6 +249,7 @@ footer small {
 }
 .logo {
      width: 90px;
+     height: auto;
      margin-left: 30px;
 }
 
@@ -353,6 +354,8 @@ justify-content: center;
      #hero, .bkgr01, .bkgr02, .bkgr03, .bkgr04 {
           height: 100vh;
      }
+     #hero .logo {width: 70px;}
+     #hero nav {padding:7px 0;max-height: 70px;}
      #hero nav ul {display: none;}
      h1 {
           font-size: 2em;          
@@ -371,6 +374,7 @@ justify-content: center;
      }
      .img-concepto  {
           width: 100%;
+          height: auto;
           display: flex;
           justify-content: center;
           margin-bottom: 15%;
