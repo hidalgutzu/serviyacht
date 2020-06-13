@@ -57,7 +57,8 @@ h2 {
 h2.blanco {color: var(--blanco90);}
 
 p {
-     line-height: 1.7em;
+     line-height: 1.4em;
+     letter-spacing: 0.6px;
 }
 
 ul {
@@ -128,8 +129,17 @@ footer small {
 .item-a {
      grid-area: header;
 }
+.item-intro {
+     grid-area: intro;
+}
+.item-ist {
+     grid-area: listado;
+}
 .item-b {
      grid-area: concepto;
+}
+.item-b2 {
+     grid-area: concepto-2;
 }
 .item-c {
      grid-area: destacados;
@@ -137,6 +147,7 @@ footer small {
 .item-d {
      grid-area: footer;
 }
+
 
 .index-container {
      display: grid;
@@ -149,33 +160,56 @@ footer small {
        "footer";  
 }
 
+.index-container-internas {
+     display: grid;
+     grid-template-columns: auto;
+     grid-template-rows: auto auto auto auto auto;
+     grid-template-areas: 
+       "header"
+       "intro"
+       "concepto"
+       "concepto-2"    
+       "footer";  
+}
+
 .ocultar {display: none;}
 .borde {border: 1px solid red;}
 .divisor {
      background: url('../images/divisor@2x.png') no-repeat center center;
-     background-size: 85%;
+     background-size: 450px auto;
      width: 100%;
      height: 60px;
-     margin-top: 4%;
+     margin-top: 4% !important;
+     margin: 0 auto;
 }
-.img-border-bottom {border-bottom: 4px solid var(--verdeyacht);}
-.img-concepto {
-     left: 5%;
-     position: relative;
-}
+#concepto .img-border-bottom {border-bottom: 4px solid var(--verdeyacht);}
+#concepto-2 .img-border-bottom {border-bottom: 4px solid var(--azulyacht);}
+
+#concepto .img-concepto, #concepto-2 .img-concepto {position: relative;}
+
+#concepto .img-concepto {left: 5%;}
+#concepto .img-concepto-2 {right: 5%;}
+
 .img-concepto img {
      position: relative;
      z-index: 100;
      max-width: 350px;
 }
-.img-cuadro-verde {
-     background: var(--verdeyacht);
+
+#concepto .img-cuadro-verde, #concepto-2 .img-cuadro-verde {
      width: 50%; 
      height: 95%; 
      position: absolute; 
      bottom: -13px;
-     left: -15px;
      z-index: 99;
+}
+#concepto .img-cuadro-verde {
+     background: var(--verdeyacht);
+     left: -15px;
+}
+#concepto-2 .img-cuadro-verde {
+     background: var(--azulyacht);
+     right: -15px;
 }
 
 .pleca-blanca {
@@ -253,21 +287,71 @@ footer small {
      margin-left: 30px;
 }
 
-/* HOME > CONCEPTO ------------------------ */
-#concepto {
+/* CONCEPTO y CONCEPTO-2 ------------------------ */
+#concepto, #concepto-2, #concepto-list {
      display: grid;
-     grid-template-columns: auto 60%;
      padding: 0 8% 0 5%;
-     height: 100vh;
+     height: 90vh;
      display: grid;
      align-content: center;
+}
+#concepto .parrafo, #concepto-2 .parrafo {
+     text-align: center;
+     display: grid;
+     align-content: center;
+}
+
+/* CONCEPTO ------------------------ */
+#concepto {
+     grid-template-columns: auto 60%;
+     padding-top: 8%;
 }
 #concepto .parrafo {
-     text-align: center;
      padding-left: 10%;
-     display: grid;
-     align-content: center;
 }
+
+/* CONCEPTO 2 ------------------------ */
+#concepto-2 {
+     grid-template-columns: 60% auto;
+}
+#concepto-2 .parrafo {
+     padding-right: 10%;
+}
+#concepto-2 .imagen {
+     display: grid;
+     justify-content: flex-end;
+}
+
+/* CONCEPTO LIST ------------------------ */
+#concepto-list {
+     justify-items: center;
+     grid-template-columns: 1fr;
+     grid-template-rows: auto auto;
+     margin-top: 5%;
+}
+#concepto-list .listados {
+     display: grid;
+     grid-auto-flow: column;
+}
+#concepto-list .listados ul li {
+     line-height: 1.4em;
+     padding-bottom: 17px;
+}
+.servicios #concepto {
+     padding-top: 0;
+     margin-bottom: 5%;
+     min-height: 600px;
+}
+
+/* CONCEPTO MAPA ------------------------ */
+#concepto-mapa {
+     justify-items: center;
+     grid-template-columns: 1fr;
+     grid-template-rows: auto auto auto;
+     margin: 10% 0;
+     text-align: center;
+}
+
 
 /* HOME > DESTACADOS ------------------------ */
 #destacados {
@@ -280,7 +364,6 @@ footer small {
      justify-content: center;
      align-content: space-between;
      padding: 14% 0;
-     
 }
 
 #destacados .doce_anos {
@@ -345,18 +428,208 @@ justify-content: center;
  footer .iconos .logo-blanco {width: 80px;}
  footer .iconos img {margin: 0 15px;}
 
+/* PÁGINAS INTERNAS > --------------------------------- */
+
+/* NOSOTROS ------------------------ */
+#hero-interna {
+     height: 40vh;
+     min-height: 300px;
+     text-align: center;
+     display: grid;
+     align-content: center;
+     position: relative;
+}
+#hero-interna h1 {padding-top: 30px;}
+#intro p {
+     color: white !important;
+}
+#intro {
+     position: relative;
+     color: white;
+     background-color: var(--verdeyacht);
+     height: 60vh;
+     min-height: 300px;
+     max-height: 350px;
+     text-align: center;
+     display: flex;
+     justify-content: center;
+     flex-flow: column;
+}
+#intro article {
+     padding: 0 10%;
+}
+#intro::before {
+     position: absolute;
+     content: "";
+     background: url('../images/pleca-verde.svg')no-repeat center center;
+     background-size: 100% 49px;
+     height: 49px;
+     width: 100%;
+     margin: 0 auto;
+     bottom: -25px;
+}
+#intro .divisor-intro {
+     margin: 0 auto;
+     height: 35px;
+     width: 200px;
+     margin-bottom: 20px;
+}
+#intro .divisor-intro.mundo {
+     background: url('../images/divisor-mundo@2x.png')no-repeat center center;
+     background-size: cover;
+}
+#intro .divisor-intro.engrane {
+     background: url('../images/divisor-engrane@2x.png')no-repeat center center;
+     background-size: cover;
+}
+#intro .divisor-intro.contacto {
+     background: url('../images/divisor-contacto@2x.png')no-repeat center center;
+     background-size: cover;
+}
+#intro ul {
+     display: grid;
+     grid-auto-flow: column;
+     grid-template-columns: 1fr 1fr 1fr;
+     padding-top: 5%;
+}
+#intro ul li a {
+     letter-spacing: 0.4px;
+     text-decoration: none;
+     color: white;
+     transition: var(--trans);
+}
+#intro ul li a:hover {
+     color: var(--azulyacht)
+}
+
+.bkgr01-interna {background: url('../images/hero-foto1-interna@2x.jpg') no-repeat center center;}
+
+.bkgr01-interna, .bkgr02-interna, .bkgr03-interna {
+     width: 100vw;
+     height: 40vh;
+     min-height: 300px;
+     background-size: cover;
+}
+
+/* NOSOTROS ------------------------ */
+.listado-internas {
+     line-height: 2em;
+     text-align: left;
+     padding: 0 33px;
+}
+
+.listado-internas {
+     list-style-image: url("../images/bullet.svg");
+     list-style-position: outside;
+   }
+
+/* NOSOTROS ------------------------ */
+.contacto h2 {
+     margin-bottom: 0;
+} 
+.contacto .divisor {
+     margin: 0 0 4% 0 !important;
+}
+
+/* CONTACTO ------------------------ */
+.map-responsive {
+     overflow:hidden;
+     padding-bottom:56.25%;
+     position:relative;
+     height:0;
+ }
+ .map-responsive iframe{
+     left:0;
+     top:0;
+     height:100%;
+     width:100%;
+     padding: 0 5%;
+     position:absolute;
+ }
+ .contacto .divisor {
+     display: flex;
+     justify-self: center;
+}
 
 /* //////////////////// */
 /* MEDIA QUERIES */
 /* //////////////////// */
 
-@media (max-width: 575.98px) { 
+ /* // Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { 
+     .img-concepto {
+          width: 300px;
+          margin: 5% auto;
+     }
+     #concepto .imagen, #concepto-2 .imagen {
+          display: grid;
+          justify-content: center;
+          text-align: center;
+      }
+      #concepto .parrafo {
+          padding-left: 0;
+      }
+      .img-concepto img {
+          width: 230px;
+     }
+}
+
+ /* // Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+     
+     h2 {
+          font-size: 2.3em;
+          margin: 0;
+      }
+ }
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+     #intro ul {
+          display: grid;
+          grid-auto-flow: row;
+          grid-template-columns: 1fr;
+          grid-gap: 20px;
+          padding-top: 5%;
+     }
+     h2 {
+          font-size: 2em;
+          margin: 5% 0;
+      }
+     #concepto-list {
+          height: 100%;
+          margin: 11% 0;
+     }
+     #concepto-list .listados {
+          display: grid;
+          grid-auto-flow: row;
+     }
+     
+     
+     #concepto .img-concepto {
+          left:0;
+      }
+     #concepto, #concepto-2 {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto;
+          padding: 8%;
+     }
+     #concepto .img-cuadro-verde {left: 20px;}
+     #concepto {
+          margin-top: 10%;
+     }
+     #concepto-2 {
+          margin-bottom: 10%;
+     }
+ }
+
+ @media (max-width: 575.98px) { 
      #hero, .bkgr01, .bkgr02, .bkgr03, .bkgr04 {
           height: 100vh;
      }
      #hero .logo {width: 70px; height: 40px;}
-     #hero nav {padding:7px 0;max-height: 70px;}
-     #hero nav ul {
+     #hero nav, #hero-interna nav {padding:7px 0;max-height: 70px;}
+     #hero nav ul, #hero-interna nav ul {
           display: grid;
           grid-row: column;
           height: 60vh;
@@ -364,10 +637,10 @@ justify-content: center;
           align-items: center;
           margin-top: 20%;
      }
-     #hero nav ul li {
+     #hero nav ul li, #hero-interna nav ul li {
           padding: 0;
      }
-     #hero nav ul li a{
+     #hero nav ul li a, #hero-interna nav ul li a {
           width: 100%;
           justify-content: center;
      }
@@ -375,18 +648,21 @@ justify-content: center;
           font-size: 2em;          
      }
           h1 span {font-size: 0.6em;}
-
+     h2 {
+          text-align: center;
+          }
+     /* concepto foto izquierda */
      #concepto {
           grid-template-columns: auto;
           grid-template-rows: auto;
-          /* justify-content: center; */
+          justify-content: center;
           padding: 8% 5%;
           height: 100%;
      }
      #concepto .parrafo {
           padding-left: 0;
      }
-     .img-concepto  {
+     #concepto-2 .img-concepto  {
           width: 100%;
           height: auto;
           display: flex;
@@ -396,7 +672,32 @@ justify-content: center;
      }
      .img-concepto img {width: 70%; margin: 10px 0 0 0}     
      .img-concepto .img-cuadro-verde {left: 10%;}   
+     /* termina concepto foto izquierda */
      
+     /* concepto foto derecha */
+     #concepto-2 {
+          grid-template-columns: auto;
+          grid-template-rows: auto;
+          justify-content: center;
+          padding: 8% 5%;
+          height: 100%;
+     }
+     #concepto-2 .parrafo {
+          padding-right: 0;
+     }
+     #concepto-2 .img-concepto  {
+          width: 100%;
+          height: auto;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 15%;
+          right: 0;
+     }
+
+     #concepto-2 .img-concepto img {width: 70%; margin: 10px 0 0 0}     
+     #concepto-2 .img-concepto .img-cuadro-verde {right: 10%;}   
+     /* termina concepto foto derecha */
+
      #destacados {padding: 17% 0; height: 150vh;}
      #destacados .beneficios .container {
           width: 80%;
@@ -461,13 +762,11 @@ justify-content: center;
       .boton-cerrar img {
           width: 50px;
       }
+
+      #intro p {
+           font-size: 0.8em;
+      }
  }
 
-// Small devices (landscape phones, less than 768px)
-@media (max-width: 767.98px) { ... }
 
-// Medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) { ... }
 
-// Large devices (desktops, less than 1200px)
-@media (max-width: 1199.98px) { ... }
